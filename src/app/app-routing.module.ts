@@ -4,17 +4,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'hub',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: 'training', loadChildren: './training/training.module#TrainingPageModule' },
+  { path: 'kalender', loadChildren: './kalender/kalender.module#KalenderPageModule' },
+  { path: 'hub', loadChildren: './hub/hub.module#HubPageModule' },
+  { path: 'mitglieder', loadChildren: './mitglieder/mitglieder.module#MitgliederPageModule' }
 ];
 
 @NgModule({
