@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavController, Platform, AlertController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-mitglieder',
   templateUrl: './mitglieder.page.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MitgliederPage implements OnInit {
 
-  constructor() { }
+  members : Observable<any>;
 
-  ngOnInit() {
+  constructor(public navCtrl: NavController,private httpClient:HttpClient, private plt: Platform, private alertCtrl: AlertController) { 
+    this.members = this.httpClient.get('https://randomuser.me/api/?results=20')
+    .pipe(
+    map(res => res['results']))
   }
 
+  ngOnInit() {
+
+  }
+  
 }
+

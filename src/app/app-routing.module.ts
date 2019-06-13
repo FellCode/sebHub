@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'training', loadChildren: './training/training.module#TrainingPageModule' },
   { path: 'kalender', loadChildren: './kalender/kalender.module#KalenderPageModule' },
   { path: 'hub', loadChildren: './hub/hub.module#HubPageModule' },
-  { path: 'mitglieder', loadChildren: './mitglieder/mitglieder.module#MitgliederPageModule' }
+  { path: 'mitglieder', loadChildren: './mitglieder/mitglieder.module#MitgliederPageModule' },
+  { path: 'member-details/:myid', loadChildren: './member-details/member-details.module#MemberDetailsPageModule' }
 ];
 
 @NgModule({
